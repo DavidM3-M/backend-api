@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Api\ProductoApiRequest;
 use App\Models\Producto;
 use Illuminate\Http\Request;
 
@@ -20,7 +21,7 @@ class ProductoApiController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ProductoApiRequest $request)
     {
         $producto = Producto::create([
             'nombre' => $request->nombre,
@@ -54,7 +55,7 @@ class ProductoApiController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     * 
+     *
      */
     public function destroy(string $id)
     {
